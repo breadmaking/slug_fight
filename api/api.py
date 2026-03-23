@@ -24,11 +24,10 @@ class DetectionOut(Schema):
 
 
 @api.post("/detections/", response=DetectionOut)
-def create_detection(request, payload: DetectionIn):
-    detection = Detection.objects.create(**payload.dict())
-    return detection
+def create_detection(request: object, payload: DetectionIn) -> Detection:
+    return Detection.objects.create(**payload.dict())
 
 
 @api.get("/detections/", response=list[DetectionOut])
-def list_detections(request):
-    return Detection.objects.all()[:50]
+def list_detections(request: object) -> list[Detection]:
+    return list(Detection.objects.all()[:50])
