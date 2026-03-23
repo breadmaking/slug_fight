@@ -1,0 +1,6 @@
+names:
+  0: slug
+path: /Users/timothy/Developer/slug_fight/datasets/slug-detection
+test: test/images
+train: train/images
+val: valid/images
