@@ -83,3 +83,6 @@ Thumbs.db
 *.onnx
 
 runs/
+videos/
+datasets/slug-detection/dataset.resolved.yaml
+datasets/roboflow/

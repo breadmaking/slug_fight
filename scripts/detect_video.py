@@ -14,7 +14,7 @@ def main():
     parser = argparse.ArgumentParser(description="Detect slugs in a video")
     parser.add_argument("video", help="Path to input video file")
     parser.add_argument("--weights", default=str(DEFAULT_WEIGHTS), help="Path to YOLO weights")
-    parser.add_argument("--conf", type=float, default=0.5, help="Confidence threshold")
+    parser.add_argument("--conf", type=float, default=0.25, help="Confidence threshold")
     parser.add_argument("--out", help="Output video path (default: <input>_detected.mp4)")
     parser.add_argument("--show", action="store_true", help="Show live preview window")
     args = parser.parse_args()

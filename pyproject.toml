@@ -6,28 +6,41 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "django>=6.0.3",
+    "django-ninja>=1.6.2",
     "dronekit>=2.9.2",
     "opencv-python>=4.13.0.92",
     "psycopg2-binary>=2.9.11",
     "pymavlink>=2.4.49",
     "pyserial>=3.5",
+    "python-dotenv>=1.2.2",
+    "roboflow>=1.2.16",
     "ultralytics>=8.4.24",
 ]
 
 [dependency-groups]
 dev = [
+    "django-stubs>=6.0.1",
     "mypy>=1.19.1",
+    "pytest-django>=4.12.0",
     "ruff>=0.15.7",
     "types-pyyaml>=6.0.12.20250915",
 ]
 
 [tool.mypy]
 strict = true
+plugins = ["mypy_django_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module = "control.settings"
 
 [[tool.mypy.overrides]]
 module = ["ultralytics.*", "ultralytics"]
 ignore_missing_imports = true
 follow_untyped_imports = true
+
+[[tool.mypy.overrides]]
+module = ["ninja.*"]
+ignore_missing_imports = true
 
 [tool.ruff]
 line-length = 88
