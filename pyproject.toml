@@ -1,0 +1,36 @@
+[project]
+name = "slug-fight"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django>=6.0.3",
+    "dronekit>=2.9.2",
+    "opencv-python>=4.13.0.92",
+    "psycopg2-binary>=2.9.11",
+    "pymavlink>=2.4.49",
+    "pyserial>=3.5",
+    "ultralytics>=8.4.24",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.19.1",
+    "ruff>=0.15.7",
+    "types-pyyaml>=6.0.12.20250915",
+]
+
+[tool.mypy]
+strict = true
+
+[[tool.mypy.overrides]]
+module = ["ultralytics.*", "ultralytics"]
+ignore_missing_imports = true
+follow_untyped_imports = true
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]

@@ -1,0 +1,7 @@
+path: .  # resolved to absolute path by train.py at runtime
+train: train/images
+val: valid/images
+test: test/images
+
+names:
+  0: slug
