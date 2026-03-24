@@ -8,6 +8,8 @@ dependencies = [
     "django>=6.0.3",
     "django-ninja>=1.6.2",
     "dronekit>=2.9.2",
+    "future>=1.0.0",
+    "httpx>=0.28.1",
     "opencv-python>=4.13.0.92",
     "psycopg2-binary>=2.9.11",
     "pymavlink>=2.4.49",
@@ -41,6 +43,15 @@ follow_untyped_imports = true
 [[tool.mypy.overrides]]
 module = ["ninja.*"]
 ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["dronekit", "dronekit.*"]
+ignore_missing_imports = true
+follow_untyped_imports = true
+
+[[tool.mypy.overrides]]
+module = ["dispatch.dronekit_drone"]
+disallow_untyped_calls = false
 
 [tool.ruff]
 line-length = 88

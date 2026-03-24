@@ -1,7 +1,6 @@
 """Download Roboflow slug datasets and merge with existing Arion Rufus data."""
 
 import os
-import shutil
 from pathlib import Path
 
 from dotenv import load_dotenv
